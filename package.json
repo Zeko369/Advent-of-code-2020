@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Fran Zekan <zekan.fran369@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "./utils/run.sh $1"
+  },
   "devDependencies": {
     "@types/node": "^14.14.10",
     "ts-node": "^9.0.0",
