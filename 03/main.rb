@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 lines = File.open('./input.txt').map(&:strip).map do |line|
   line
 end
