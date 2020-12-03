@@ -3,9 +3,9 @@
 class Day04
   def initialize(demo = false)
     if demo
-      @lines = File.open('./demo.txt').map(&:strip)
+      @lines = File.open(__dir__ + '/demo.txt').map(&:strip)
     else
-      @lines = File.open('./input.txt').map(&:strip)
+      @lines = File.open(__dir__ + '/input.txt').map(&:strip)
     end
   end
 
