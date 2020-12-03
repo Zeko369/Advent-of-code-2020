@@ -2,11 +2,12 @@
 
 class Day04
   def initialize(demo = false)
-    if demo
-      @lines = File.open(__dir__ + '/demo.txt').map(&:strip)
-    else
-      @lines = File.open(__dir__ + '/input.txt').map(&:strip)
-    end
+    file = if ARGV.first == 'demo'
+             '/demo.txt'
+           else
+             '/input.tx'
+           end
+    @lines = File.open(__dir__ + file).map(&:strip)
   end
 
   def first
