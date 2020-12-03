@@ -15,6 +15,7 @@ const getLines = require("../common/input");
       if (i == j) {
         continue;
       }
+
       if (input[i] + input[j] === 2020) {
         const tmp = input[i] * input[j];
         if (tmp > largest) {
@@ -30,6 +31,7 @@ const getLines = require("../common/input");
         if (i == j || j == k || i == k) {
           continue;
         }
+
         if (input[i] + input[j] + input[k] === 2020) {
           const tmp = input[i] * input[j] * input[k];
           if (tmp > largest) {
