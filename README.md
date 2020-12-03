@@ -4,7 +4,7 @@
 
 - [x] 01 - javascript
 - [x] 02 - javascript
-- [ ] 03 - ruby
+- [x] 03 - ruby
 - [ ] 04 - ruby
 - [ ] 05 - c
 - [ ] 06 - c
