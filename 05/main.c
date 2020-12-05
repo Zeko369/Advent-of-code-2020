@@ -76,12 +76,6 @@ int main() {
       if(ids[index - 1] == 1 && ids[index + 1] == 1 && ids[index] == 0) {
         printf("Second: %d\n", index);
       }
-
-      // if(ids[index]) {
-      //   printf("Seat %d\n", index);
-      // } else {
-      //   printf("Not  %d\n", index);
-      // }
     }
   }
 
