@@ -6,7 +6,7 @@
 - [x] 02 - javascript
 - [x] 03 - ruby
 - [x] 04 - ruby
-- [ ] 05 - c
+- [x] 05 - c
 - [ ] 06 - c
 - [ ] 07 - python
 - [ ] 08 - python
