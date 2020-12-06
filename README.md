@@ -7,7 +7,7 @@
 - [x] 03 - ruby
 - [x] 04 - ruby
 - [x] 05 - c
-- [ ] 06 - c
+- [x] 06 - c
 - [ ] 07 - python
 - [ ] 08 - python
 - [ ] 09 - cpp
