@@ -12,13 +12,13 @@ int main() {
   int last = 1;
   char *a;
   while ((a = fgets(arr[index++], SIZE + 2, stdin)) || last) {
-    if(arr[index-1][0] == '\n') {
+    if (arr[index - 1][0] == '\n') {
       // process
       int people[SIZE][26] = {0};
 
-      for(int i = 0; i < index; i++) {
-        for(int j = 0; j < SIZE; j++) {
-          if(arr[i][j] == '\n') {
+      for (int i = 0; i < index; i++) {
+        for (int j = 0; j < SIZE; j++) {
+          if (arr[i][j] == '\n') {
             break;
           }
 
@@ -33,25 +33,25 @@ int main() {
       //   printf("\n");
       // }
 
-      for(int j = 0; j < 26; j++) {
-        for(int i = 0; i < SIZE; i++) {
-          if(people[i][j]) {
+      for (int j = 0; j < 26; j++) {
+        for (int i = 0; i < SIZE; i++) {
+          if (people[i][j]) {
             count++;
             break;
           }
         }
       }
 
-      for(int j = 0; j < 26; j++) {
+      for (int j = 0; j < 26; j++) {
         int tmpCount = 0;
 
-        for(int i = 0; i < SIZE; i++) {
-          if(people[i][j]) {
+        for (int i = 0; i < SIZE; i++) {
+          if (people[i][j]) {
             tmpCount++;
           }
         }
 
-        if(tmpCount == index-1) {
+        if (tmpCount == index - 1) {
           countAll++;
         }
       }
@@ -60,7 +60,7 @@ int main() {
       continue;
     }
 
-    if(!a && last) {
+    if (!a && last) {
       break;
     }
   }
