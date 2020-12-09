@@ -27,6 +27,34 @@ int first(const int *arr, int n) {
       return arr[i];
     }
   }
+
+  return -1;
+}
+
+int second(const int *arr, int n, int first) {
+  for (int i = 0; i < n; i++) {
+    int tmp = 0;
+    int smallest = arr[i];
+    int biggest = arr[i];
+
+    for (int j = i; j < n; j++) {
+      tmp += arr[j];
+
+      if (arr[j] < smallest) {
+        smallest = arr[j];
+      }
+
+      if (arr[j] > biggest) {
+        biggest = arr[j];
+      }
+
+      if (tmp == first) {
+        return biggest + smallest;
+      }
+    }
+  }
+
+  return -1;
 }
 
 int main() {
@@ -42,7 +70,7 @@ int main() {
   int second_result = second(arr, index, first_result);
 
   std::cout << "First: " << first_result << std::endl;
-  std::cout << "Second: " << first_result << std::endl;
+  std::cout << "Second: " << second_result << std::endl;
 
   return 0;
 }
