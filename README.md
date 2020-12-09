@@ -10,7 +10,7 @@
 - [x] 06 - c
 - [x] 07 - python
 - [x] 08 - python
-- [ ] 09 - cpp
+- [x] 09 - cpp
 - [ ] 10 - cpp
 - [ ] 11 - rust
 - [ ] 12 - rust
