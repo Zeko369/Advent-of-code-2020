@@ -1,21 +1,21 @@
 # frozen_string_literal: true
 
 class Day04
-  @@fields = ["byr",  "iyr",  "eyr",  "hgt",  "hcl",  "ecl",  "pid",  "cid"]
+  @@fields = %w[byr iyr eyr hgt hcl ecl pid cid]
   @@rules = {
-    'byr': {len: 4, from: 1920, to: 2002},
-    'iyr': {len: 4, from: 2010, to: 2020},
-    'eyr': {len: 4, from: 2020, to: 2030},
+    'byr': { len: 4, from: 1920, to: 2002 },
+    'iyr': { len: 4, from: 2010, to: 2020 },
+    'eyr': { len: 4, from: 2020, to: 2030 },
     'hgt': [
-      {ext: 'cm', from: 150, to: 193},
-      {ext: 'in', from: 59, to: 76}
+      { ext: 'cm', from: 150, to: 193 },
+      { ext: 'in', from: 59, to: 76 }
     ],
     'hcl': 'color',
-    'ecl': ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'],
-    'pid': {len: 9}
+    'ecl': %w[amb blu brn gry grn hzl oth],
+    'pid': { len: 9 }
   }
 
-  def initialize(demo = false)
+  def initialize(_demo = false)
     file = if ARGV.first == 'demo'
              '/demo.txt'
            else
@@ -29,10 +29,8 @@ class Day04
     count = 0
 
     @lines.each_with_index do |row, index|
-      if(row == '' || index == @lines.size - 1)
-        if index == @lines.size - 1
-          tmp << row
-        end
+      if row == '' || index == @lines.size - 1
+        tmp << row if index == @lines.size - 1
 
         tmp = tmp.flatten.map do |item|
           item.split(':').first
@@ -40,10 +38,7 @@ class Day04
 
         tmp << 'cid' unless tmp.include?('cid')
 
-        if tmp.sort == @@fields.sort
-          count += 1
-        end
-
+        count += 1 if tmp.sort == @@fields.sort
 
         tmp = []
       else
@@ -59,10 +54,8 @@ class Day04
     count = 0
 
     @lines.each_with_index do |row, index|
-      if(row == '' || index == @lines.size - 1)
-        if index == @lines.size - 1
-          tmp << row.split(' ')
-        end
+      if row == '' || index == @lines.size - 1
+        tmp << row.split(' ') if index == @lines.size - 1
 
         ok = true
         tmp = tmp.flatten.map do |item|
@@ -119,9 +112,7 @@ class Day04
 
         tmp << 'cid' unless tmp.include?('cid')
 
-        if tmp.sort == @@fields.sort
-          count += 1
-        end
+        count += 1 if tmp.sort == @@fields.sort
 
         tmp = []
       else
@@ -131,8 +122,6 @@ class Day04
 
     puts "Second: #{count}"
   end
-
-  private
 end
 
 c = Day04.new(true)

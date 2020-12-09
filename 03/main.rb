@@ -1,22 +1,19 @@
 # frozen_string_literal: true
 
-lines = File.open('./input.txt').map(&:strip)
+lines = File.open(__dir__ + '/input.txt').map(&:strip)
 
 def run(d, r, lines)
-  trees = 0;
-  pos = r;
+  trees = 0
+  pos = r
 
   lines.each_with_index do |line, index|
     if d == 1
-      next if index == 0
+      next if index.zero?
     elsif d == 2
-      next if index % 2 == 1 || index == 0
-      # puts "#{index}, #{pos}, #{line[pos]}"
+      next if index.odd? || index.zero?
     end
 
-    while pos + r > line.size
-      line += line
-    end
+    line += line while pos + r > line.size
 
     trees += 1 if line[pos] == '#'
     pos += r
@@ -46,4 +43,4 @@ out.each do |a|
   end
 end
 
-p tmp
+puts tmp
